@@ -11,6 +11,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -35,7 +36,9 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "User.findByPrenom", query = "SELECT u FROM User u WHERE u.prenom = :prenom")
     , @NamedQuery(name = "User.findByMail", query = "SELECT u FROM User u WHERE u.mail = :mail")
     , @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")
-    , @NamedQuery(name = "User.findByType", query = "SELECT u FROM User u WHERE u.type = :type")})
+    , @NamedQuery(name = "User.findByType", query = "SELECT u FROM User u WHERE u.type = :type"),
+    @NamedQuery(name = "User.otherUsers", query = "SELECT u FROM User u WHERE u.idUser <> :idUser")
+})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -43,6 +46,7 @@ public class User implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "id_user")
+    @GeneratedValue
     private Integer idUser;
     @Size(max = 254)
     @Column(name = "nom")

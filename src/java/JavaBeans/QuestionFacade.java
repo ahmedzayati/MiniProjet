@@ -6,9 +6,12 @@
 package JavaBeans;
 
 import entities.Question;
+import entities.User;
+import java.util.Vector;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -29,4 +32,10 @@ public class QuestionFacade extends AbstractFacade<Question> {
         super(Question.class);
     }
     
+    public Vector<Question> findUserQuestion(User id){
+         Query query=em.createNamedQuery("Question.findUserQuestion", User.class);
+                query.setParameter("id",id);
+           return  (Vector<Question>) query.getResultList();
+        
+    }
 }

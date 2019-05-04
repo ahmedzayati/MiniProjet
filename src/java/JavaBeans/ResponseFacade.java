@@ -5,10 +5,14 @@
  */
 package JavaBeans;
 
+import entities.Question;
 import entities.Response;
+import entities.User;
+import java.util.Vector;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -28,5 +32,13 @@ public class ResponseFacade extends AbstractFacade<Response> {
     public ResponseFacade() {
         super(Response.class);
     }
+    public Vector<Response> findQuesResp(Question q){
+         Query query=em.createNamedQuery("Response.findByQues", User.class);
+                query.setParameter("q",q);
+           return  (Vector<Response>) query.getResultList();
+        
+    }
+    
+        
     
 }

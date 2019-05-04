@@ -11,6 +11,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -33,7 +34,9 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Question.findAll", query = "SELECT q FROM Question q")
     , @NamedQuery(name = "Question.findByIdQues", query = "SELECT q FROM Question q WHERE q.idQues = :idQues")
-    , @NamedQuery(name = "Question.findByQuestion", query = "SELECT q FROM Question q WHERE q.question = :question")})
+    , @NamedQuery(name = "Question.findByQuestion", query = "SELECT q FROM Question q WHERE q.question = :question"),
+ @NamedQuery(name = "Question.findUserQuestion", query = "SELECT q FROM Question q WHERE q.idUser=:id")
+})
 public class Question implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,6 +44,7 @@ public class Question implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "id_ques")
+    @GeneratedValue
     private Integer idQues;
     @Size(max = 254)
     @Column(name = "question")

@@ -24,8 +24,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Amitie.findAll", query = "SELECT a FROM Amitie a")
-    , @NamedQuery(name = "Amitie.findByIdUser", query = "SELECT a FROM Amitie a WHERE a.amitiePK.idUser = :idUser")
-    , @NamedQuery(name = "Amitie.findByUseIdUser", query = "SELECT a FROM Amitie a WHERE a.amitiePK.useIdUser = :useIdUser")
+    , @NamedQuery(name = "Amitie.findByIdUser", query = "SELECT a FROM Amitie a WHERE a.user1 = :idUser")
+    , @NamedQuery(name = "Amitie.findByUseIdUser", query = "SELECT a FROM Amitie a WHERE a.user1 = :useIdUser "),
+     @NamedQuery(name = "Amitie.findAmitie", query = "SELECT a FROM Amitie a WHERE a.user1 = :useIdUser and a.user = :idUser"),
   })
 public class Amitie implements Serializable {
 

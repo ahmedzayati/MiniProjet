@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -29,7 +30,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Response.findAll", query = "SELECT r FROM Response r")
     , @NamedQuery(name = "Response.findByIdRep", query = "SELECT r FROM Response r WHERE r.idRep = :idRep")
-    , @NamedQuery(name = "Response.findByReponse", query = "SELECT r FROM Response r WHERE r.reponse = :reponse")})
+    , @NamedQuery(name = "Response.findByReponse", query = "SELECT r FROM Response r WHERE r.reponse = :reponse"),
+@NamedQuery(name = "Response.findByQues", query = "SELECT r FROM Response r WHERE r.idQues = :q"),
+@NamedQuery(name = "Response.findUserResp", query = "SELECT q FROM Response q WHERE q.idUser=:id")
+})
 public class Response implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -37,6 +41,7 @@ public class Response implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "id_rep")
+    @GeneratedValue
     private Integer idRep;
     @Size(max = 254)
     @Column(name = "reponse")

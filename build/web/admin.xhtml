@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="font-awesome.min.css" />
+        <h:outputScript library="js" name="jquery.min.js" />
+        <h:outputScript library="js" name="tether.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputStylesheet library="css" name="style.css"/>
+    </h:head>
+    <h:body>
+        <div class="container"> 
+            <h:form>
+                
+                <div class="col-md-7" >
+                    <ui:repeat var="item" value="#{admin.notValid()}" class="list-group-item"> 
+                        <br/> <h3>#{item.nom} #{item.prenom}</h3>  
+                        <h:commandButton value="valider" class="btn btn-success" action="#{admin.valide(item.idUser)}" />
+                        
+                    </ui:repeat>
+                </div>
+                
+                <div class="col-md-7 " >
+                    <ui:repeat var="item" value="#{admin.checkuser()}" class="list-group-item"> 
+                        <br/> <h3>#{item.idUser} #{item.nom} #{item.prenom}</h3> 
+                        <h:commandButton value="supprimer" class="btn btn-danger" action="#{admin.valide(item.idUser)}"/>
+
+                    </ui:repeat>                    
+                </div>
+               
+                
+            </h:form>
+        
+        
+       
+        </div>
+    </h:body>
+</html>

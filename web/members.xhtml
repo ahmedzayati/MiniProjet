@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+   <h:head>
+        <title>Profil</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+        
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="font-awesome.min.css" />
+        <h:outputScript library="js" name="jquery.min.js" />
+        <h:outputScript library="js" name="tether.min.js" />
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <h:outputStylesheet library="css" name="style.css"/>
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-toggleable-sm navbar-dark bg-dark" id="nav1">
+  <a class="navbar-brand ml-4" href="#">INTRANET</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto ml-4 mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="members.xhtml">Forum Members</a>
+      </li>
+      
+    </ul>
+    
+   
+  </div>
+</nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+            <div class='card card-profile text-center  ml-0 mr-0' style="width: 250px">
+                <img alt='' class='card-img-top' src='https://unsplash.it/340/160?image=354'/>
+                <div class='card-block'>
+                  <img alt='' class='card-img-profile' src='https://it.gravatar.com/userimage/3434071/205a00fc16ae537b26b56f40790910fe.jpg?size=140'/>
+                  <h4 class='card-title'>
+                    #{sessionScope["user"].prenom} #{sessionScope["user"].nom}
+                    <small>#{sessionScope["user"].type}</small>
+                  </h4>
+
+                </div>
+            </div>
+            </div>
+                <div class="col-9 mt-5">
+                    <div class="row">
+                    <c:forEach  items="#{membersView.members}" var="item">
+                        <div class="card hovercard col-4 ml-2">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img alt="" src="./resources/img/index.png"/>
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="https://scripteden.com/">#{item.nom} #{item.prenom}</a>
+                    </div>
+                    <div class="desc">#{item.type}</div>
+                                            <h:form>
+                                
+                                                <c:choose>
+  <c:when test="#{followView.checkAmitie(item)}">
+      <h:commandButton value="UnFollow" action="#{followView.unfollow(item)}"></h:commandButton>
+          <h:commandButton value="Message" ></h:commandButton>
+
+  </c:when>
+  
+  <c:otherwise>
+        <h:commandButton value="Follow" action="#{followView.follow(item)}"></h:commandButton>
+  </c:otherwise>
+</c:choose>
+                    </h:form>
+                </div>
+                
+            </div>
+          </c:forEach>
+                          
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </h:body>
+</html>

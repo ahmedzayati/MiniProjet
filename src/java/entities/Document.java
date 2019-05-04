@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -39,6 +40,7 @@ public class Document implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "id_doc")
+    @GeneratedValue
     private Integer idDoc;
     @Size(max = 254)
     @Column(name = "nom_doc")

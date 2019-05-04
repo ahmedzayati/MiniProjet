@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Profil</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -31,14 +32,92 @@
       </li>
       
     </ul>
-    <div class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="email" placeholder="Email" value=""/>
-
-        <input class="form-control mr-sm-2" type="password" placeholder="Password" value=""/>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-    </div>
+    
+    <h:form class="form-inline my-2 my-lg-0">
+        <h:outputLabel value="Email" class="text-success"/>
+            &nbsp;&nbsp;
+            <h:inputText class="form-control mr-sm-2" value="#{login.email}" />
+            &nbsp;&nbsp;
+            <h:outputLabel value="Password"  class="text-success"/>
+            &nbsp;&nbsp;
+            <h:inputSecret class="form-control mr-sm-2" value="#{login.password}"/>
+            &nbsp;&nbsp;
+            <h:commandButton action="#{login.connection()}" class="btn btn-outline-success my-2 my-sm-0" value="login"/>
+        </h:form>
   </div>
 </nav>
+        <div class="container">
+            <h:form>
+                <div class="col-md-4 mb-3">
+                    <h:outputText  value="First name" />  
+                    <h:inputText  class="form-control is-valid" value="#{login.user.prenom}" id="validationServer02" validatorMessage="first name is required" >  
+                        <f:validateRequired/>
+                    </h:inputText>
+
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h:outputText value="Last name" /> 
+                    <h:inputText  class="form-control is-valid" value="#{login.user.nom}" id="validationServer088" validatorMessage="last name is required">
+                        <f:validateRequired/>
+                    </h:inputText>
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h:outputText >Email</h:outputText>
+                    <div class="invalid-feedback">
+                        Please enter your mail address.
+                    </div>
+                    <h:inputText class="form-control is-invalid" value="#{login.user.mail}" id="validationServer03"  validatorMessage="Email is required" >
+                        <f:validateRequired/>
+                    </h:inputText>
+
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div>
+
+                        <div class="invalid-feedback">
+                            Please choose a password.
+                        </div> 
+                        <h:inputSecret class="form-control is-valid" value="#{login.user.password}" id="validationServerUsername" required="True" >
+                            <f:validateLength minimum="8"/>
+                        </h:inputSecret>
+
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div> 
+
+                        <div class="invalid-feedback">
+                            Please confirm your password.
+                        </div>
+
+                        <h:inputSecret  class="form-control is-valid" id="validationServerUsername2" required="True" >
+                            <f:validateLength minimum="8"/>
+                        </h:inputSecret>
+
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+
+                    <div class="my-1 mr-2">
+
+                        <h:selectOneMenu class="custom-select my-1 mr-sm-2"  value = "#{login.user.type}"> 
+                            <f:selectItem itemValue = "STUDENT" itemLabel = "Student" /> 
+                            <f:selectItem itemValue = "PROESSOR" itemLabel = "Professor" /> 
+                        </h:selectOneMenu> 	
+
+                    </div>
+                </div>
+
+                <h:commandButton class = "ml-3 btn btn-primary" type="submit" value="submit" action="#{login.submit()}"/>
+                <h:commandButton class = "ml-3 btn btn-primary" type="reset" value="reset" action="index"/>
+
+
+
+            </h:form>
+
+        </div>
     </h:body>
 </html>
 

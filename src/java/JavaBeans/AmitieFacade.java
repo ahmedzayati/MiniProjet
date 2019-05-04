@@ -6,9 +6,13 @@
 package JavaBeans;
 
 import entities.Amitie;
+import entities.User;
+import java.util.Vector;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.swing.text.StyledEditorKit;
 
 /**
  *
@@ -28,5 +32,20 @@ public class AmitieFacade extends AbstractFacade<Amitie> {
     public AmitieFacade() {
         super(Amitie.class);
     }
+    public Amitie findAmitie(User idUser,User useIdUser){
+         Query query=em.createNamedQuery("Amitie.findAmitie", Amitie.class);
+                query.setParameter("useIdUser",idUser);
+                  query.setParameter("idUser",useIdUser);
+                      return (Amitie) query.getSingleResult();
+                                
+    }
+    public Vector<Amitie> findAmitieById(User id ){
+                 Query query=em.createNamedQuery("Amitie.findByIdUser", Amitie.class);
+                  query.setParameter("idUser",id);
+                  return( Vector<Amitie>) query.getResultList();
+
+
+    }
+    
     
 }

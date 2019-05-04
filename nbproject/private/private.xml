@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/entities/Response.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/web/index.xhtml</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/entities/AmitiePK.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/Presentation/inscription.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/JavaBeans/ResponseFacade.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/Presentation/fileupload.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/Presentation/Login.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/Presentation/commentView.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/JavaBeans/UserFacade.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/entities/Question.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/JavaBeans/AmitieFacade.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/JavaBeans/AbstractFacade.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/web/members.xhtml</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/JavaBeans/QuestionFacade.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/web/resources/css/style.css</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/entities/User.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/entities/Document.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/web/profil.xhtml</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/Presentation/membersView.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/entities/Amitie.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/Presentation/QuestionView.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/JavaBeans/DocumentFacade.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/JavaBeans/MessageFacade.java</file>
+            <file>file:/C:/Users/ahmed/Documents/NetBeansProjects/MiniProjet/src/java/Presentation/followView.java</file>
+        </group>
+    </open-files>
+</project-private>
